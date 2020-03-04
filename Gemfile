@@ -17,6 +17,8 @@ gem 'dotenv-rails', '~> 2.7', '>= 2.7.1'
 # Serialization
 gem 'active_model_serializers', '~> 0.10.9'
 
+ gem 'sassc-rails'
+
 gem 'doorkeeper', '~> 5.3', '>= 5.3.1'
 gem 'bcrypt', '~> 3.1', '>= 3.1.13'
 
