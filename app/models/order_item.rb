@@ -30,4 +30,13 @@ class OrderItem < ApplicationRecord
   belongs_to :order, optional: true
   belongs_to :member
   belongs_to :product
+
+  enum status: {
+    pending: 0,
+    complete: 1
+  }
+
+  def price
+    product.price * quantity
+  end
 end
