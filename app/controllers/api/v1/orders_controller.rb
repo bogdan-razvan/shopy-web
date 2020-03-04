@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Api::V1::OrderItemsController < Api::V1::BaseController
+class Api::V1::OrdersController < Api::V1::BaseController
   def index
     render current_member.orders
   end
