@@ -22,6 +22,7 @@ Rails.application.routes.draw do
 
       resources :products, only: %i[index show]
       resources :reviews, only: %i[create]
+      resources :avatars, only: %i[create]
     end
   end
 end

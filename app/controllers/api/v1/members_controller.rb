@@ -16,7 +16,8 @@ class Api::V1::MembersController < Api::V1::BaseController
     def member_params
       params.permit(
         :email, :password, :username,
-        :fullname, :address, :phone, :birth_date
+        :fullname, :address, :phone,
+        :birth_date, :avatar_id
       )
     end
 end

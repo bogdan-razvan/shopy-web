@@ -24,5 +24,9 @@
 #
 
 class ReviewSerializer < ActiveModel::Serializer
-  attributes :value, :comment
+  attributes :value, :comment, :member
+
+  def member
+    MemberReviewSerializer.new(object.member)
+  end
 end

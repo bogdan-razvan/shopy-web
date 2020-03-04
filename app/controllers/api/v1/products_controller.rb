@@ -2,7 +2,7 @@
 
 class Api::V1::ProductsController < Api::V1::BaseController
   def index
-    render json: Product.includes(:reviews).all
+    render json: Product.includes(reviews: :members).all
   end
 
   def show

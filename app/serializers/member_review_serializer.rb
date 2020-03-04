@@ -25,14 +25,15 @@
 #  fk_rails_...  (avatar_id => avatars.id)
 #
 
-FactoryBot.define do
-  factory :member do
-    username { 'MyString' }
-    password { 'MyString' }
-    email { 'MyString' }
-    fullname { 'MyString' }
-    address { 'MyText' }
-    phone { 'MyString' }
-    birth_date { '2020-03-04' }
+class MemberReviewSerializer < ActiveModel::Serializer
+  attributes :fullname, :avatar_url
+
+  def avatar_url
+    if object.avatar&.image
+      Rails.application.routes.url_helpers.rails_blob_path(
+        object.avatar.image,
+        disposition: 'attachment'
+      )
+    end
   end
 end

@@ -5,6 +5,7 @@
 # Table name: members
 #
 #  address         :text
+#  avatar_id       :bigint
 #  birth_date      :date
 #  created_at      :datetime         not null
 #  email           :string
@@ -15,9 +16,18 @@
 #  updated_at      :datetime         not null
 #  username        :string
 #
+# Indexes
+#
+#  index_members_on_avatar_id  (avatar_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (avatar_id => avatars.id)
+#
 
 class Member < ApplicationRecord
   has_secure_password
+  belongs_to :avatar
 
   before_save { email.downcase! }
 
