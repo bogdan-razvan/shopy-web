@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  default_url_options host: 'example.com'
+
   resources :products
   use_doorkeeper
   mount Sidekiq::Web => '/sidekiq' # monitoring console
@@ -17,6 +19,8 @@ Rails.application.routes.draw do
       resources :sessions, only: %i[create index] do
         delete '/', action: :destroy, on: :collection
       end
+
+      resources :products, only: %i[index show]
     end
   end
 end

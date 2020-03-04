@@ -15,5 +15,9 @@
 #
 
 class ProductSerializer < ActiveModel::Serializer
-  attributes :id, :name, :product_type, :description, :stock, :price
+  attributes :id, :name, :product_type, :description, :stock, :price, :image_url
+
+  def image_url
+    Rails.application.routes.url_helpers.rails_blob_path(object.image, disposition: 'attachment')
+  end
 end
