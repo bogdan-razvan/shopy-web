@@ -4,18 +4,21 @@
 #
 # Table name: products
 #
-#  created_at   :datetime         not null
-#  description  :text
-#  id           :bigint           not null, primary key
-#  name         :string
-#  price        :float
-#  product_type :string
-#  stock        :integer
-#  updated_at   :datetime         not null
+#  average_rating :float
+#  created_at     :datetime         not null
+#  description    :text
+#  id             :bigint           not null, primary key
+#  name           :string
+#  price          :float
+#  product_type   :string
+#  stock          :integer
+#  updated_at     :datetime         not null
 #
 
 class ProductSerializer < ActiveModel::Serializer
-  attributes :id, :name, :product_type, :description, :stock, :price, :image_url
+  attributes :id, :name, :product_type, :description, :stock, :price, :image_url, :average_rating
+
+  has_many :reviews
 
   def image_url
     Rails.application.routes.url_helpers.rails_blob_path(object.image, disposition: 'attachment')

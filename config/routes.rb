@@ -21,6 +21,7 @@ Rails.application.routes.draw do
       end
 
       resources :products, only: %i[index show]
+      resources :reviews, only: %i[create]
     end
   end
 end
