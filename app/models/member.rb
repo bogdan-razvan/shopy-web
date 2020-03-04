@@ -27,7 +27,9 @@
 
 class Member < ApplicationRecord
   has_secure_password
-  belongs_to :avatar
+  belongs_to :avatar, dependent: :destroy
+
+  has_many :order_items, dependent: :destroy
 
   before_save { email.downcase! }
 

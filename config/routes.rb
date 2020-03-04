@@ -23,6 +23,7 @@ Rails.application.routes.draw do
       resources :products, only: %i[index show]
       resources :reviews, only: %i[create]
       resources :avatars, only: %i[create]
+      resources :order_items, only: %i[create update destroy]
     end
   end
 end
