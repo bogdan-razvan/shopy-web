@@ -5,10 +5,20 @@ class Api::V1::MembersController < Api::V1::BaseController
 
   skip_before_action :doorkeeper_authorize!, only: :create
 
+  def current
+    render json: current_member
+  end
+
   def create
     member = Member.create!(member_params)
 
     render json: member, with_auth_tokens: true
+  end
+
+  def update
+    current_member.update(member_params.except(:email, :username))
+
+    render json: current_member
   end
 
   private

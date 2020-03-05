@@ -44,6 +44,7 @@ group :development, :test do
   gem 'dox', '~> 1.1', require: false
   gem 'factory_bot_rails', '~> 5.0', '>= 5.0.1'
   gem 'faker', '~> 1.9', '>= 1.9.3'
+  gem 'rails-erd'
   gem 'rspec-rails', '~> 3.8', '>= 3.8.2'
   gem 'shoulda-matchers', '~> 4.0', '>= 4.0.1'
   gem 'simplecov', '~> 0.16.1', require: false

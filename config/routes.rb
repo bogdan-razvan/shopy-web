@@ -14,7 +14,11 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :members, only: :create
+      resources :members, only: [:create] do
+        get :current, on: :collection
+      end
+
+      match 'members' => 'members#update', via: :patch
 
       resources :sessions, only: %i[create index] do
         delete '/', action: :destroy, on: :collection

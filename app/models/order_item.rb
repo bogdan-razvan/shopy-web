@@ -10,7 +10,7 @@
 #  order_id   :bigint
 #  product_id :bigint           not null
 #  quantity   :integer
-#  status     :integer          default(0), not null
+#  status     :integer          default("pending"), not null
 #  updated_at :datetime         not null
 #
 # Indexes
