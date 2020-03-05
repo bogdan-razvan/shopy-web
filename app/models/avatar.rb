@@ -12,5 +12,5 @@
 class Avatar < ApplicationRecord
   has_one_attached :image
 
-  has_one :member
+  has_one :member, dependent: :nullify
 end

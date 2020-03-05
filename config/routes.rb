@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  default_url_options host: 'example.com'
+  default_url_options host: ENV['BASE_URL'] || 'http://localhost:3000'
 
   resources :products
   use_doorkeeper

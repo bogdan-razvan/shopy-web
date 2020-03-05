@@ -29,11 +29,6 @@ class MemberReviewSerializer < ActiveModel::Serializer
   attributes :fullname, :avatar_url
 
   def avatar_url
-    if object.avatar&.image
-      Rails.application.routes.url_helpers.rails_blob_path(
-        object.avatar.image,
-        disposition: 'attachment'
-      )
-    end
+    Rails.application.routes.url_helpers.rails_blob_url(object.avatar.image) if object.avatar&.image
   end
 end

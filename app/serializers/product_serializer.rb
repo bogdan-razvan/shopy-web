@@ -21,6 +21,6 @@ class ProductSerializer < ActiveModel::Serializer
   has_many :reviews
 
   def image_url
-    Rails.application.routes.url_helpers.rails_blob_path(object.image, disposition: 'attachment')
+    Rails.application.routes.url_helpers.rails_blob_url(object.image)
   end
 end

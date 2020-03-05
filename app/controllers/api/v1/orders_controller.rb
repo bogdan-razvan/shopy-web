@@ -10,9 +10,9 @@ class Api::V1::OrdersController < Api::V1::BaseController
 
     order = Order.create!(member: current_member)
 
-    # rubocop:disable
+    # rubocop:disable Rails/SkipsModelValidations
     order_items.update_all(status: :complete, order_id: order.id)
-    # rubocop:enable
+    # rubocop:enable Rails/SkipsModelValidations
 
     render json: order
   end
