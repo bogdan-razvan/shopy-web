@@ -20,7 +20,7 @@ gem 'cloudinary'
 
 gem 'sassc-rails'
 
-gem 'doorkeeper', '~> 5.3', '>= 5.3.1'
+gem 'doorkeeper', '~> 5.3'
 gem 'bcrypt', '~> 3.1', '>= 3.1.13'
 
 group :development do
