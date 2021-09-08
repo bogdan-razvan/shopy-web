@@ -26,7 +26,7 @@ gem 'bcrypt', '~> 3.1', '>= 3.1.13'
 group :development do
   gem 'annotate', '~> 2.7', '>= 2.7.4'
   gem 'awesome_print', '~> 1.8'
-  gem 'better_errors', '~> 2.5', '>= 2.5.1'
+  gem 'better_errors', '~> 2.8'
   gem 'byebug'
   gem 'brakeman', '~> 4.5', require: false
   gem 'bundler-audit', '~> 0.6.1', require: false
